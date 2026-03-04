@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Киноподборка</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <h1>🎬 Сайт рекомендаций фильмов</h1>
+    <p class="subtitle">Выбери жанр и настроение — получи подборку к просмотру.</p>
+
+    <form method="post" class="filters">
+      <label>
+        Жанр
+        <select name="genre">
+          {% for value, label in genres.items() %}
+            <option value="{{ value }}" {% if selected_genre == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label>
+        Настроение
+        <select name="mood">
+          {% for value, label in moods.items() %}
+            <option value="{{ value }}" {% if selected_mood == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <button type="submit">Подобрать</button>
+    </form>
+
+    {% if movies %}
+      <section>
+        <h2>Рекомендуем посмотреть:</h2>
+        <ul class="movies">
+          {% for movie in movies %}
+            <li>
+              <h3>{{ movie.title }} <span>({{ movie.year }})</span></h3>
+              <p>{{ movie.description }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </main>
+</body>
+</html>
