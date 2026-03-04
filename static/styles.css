@@ -1,0 +1,82 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #25304d, #111522 55%);
+  color: #f5f7fb;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(20, 24, 36, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.subtitle {
+  color: #b8c0d9;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+select,
+button {
+  border: 1px solid #4c5a82;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: #1b2235;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(135deg, #5d7fff, #8a5dff);
+  font-weight: 600;
+}
+
+.movies {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.movies li {
+  background: #181f31;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+h3 {
+  margin: 0 0 0.3rem;
+}
+
+h3 span {
+  color: #8f9aca;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+p {
+  margin: 0;
+}
